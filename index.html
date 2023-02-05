@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Game</title>
+  </head>
+  <body>
+    <h1>Simple Game</h1>
+    <p>Guess a number between 1 and 100</p>
+    <input type="text" id="guess-input">
+    <button id="guess-button">Guess</button>
+    <p id="result"></p>
+    <script>
+      const guessInput = document.getElementById('guess-input');
+      const guessButton = document.getElementById('guess-button');
+      const result = document.getElementById('result');
+      let targetNumber = Math.floor(Math.random() * 100) + 1;
+
+      guessButton.addEventListener('click', function() {
+        const guess = parseInt(guessInput.value, 10);
+        if (guess === targetNumber) {
+          result.innerHTML = 'You win!';
+        } else if (guess < targetNumber) {
+          result.innerHTML = 'Too low';
+        } else {
+          result.innerHTML = 'Too high';
+        }
+      });
+    </script>
+  </body>
+</html>
