@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
     <title>Simple Game</title>
   </head>
   <body>
@@ -12,22 +12,5 @@
     <input type="text" id="guess-input">
     <button id="guess-button">Guess</button>
     <p id="result"></p>
-    <script>
-      const guessInput = document.getElementById('guess-input');
-      const guessButton = document.getElementById('guess-button');
-      const result = document.getElementById('result');
-      let targetNumber = Math.floor(Math.random() * 100) + 1;
-
-      guessButton.addEventListener('click', function() {
-        const guess = parseInt(guessInput.value, 10);
-        if (guess === targetNumber) {
-          result.innerHTML = 'You win!';
-        } else if (guess < targetNumber) {
-          result.innerHTML = 'Too low';
-        } else {
-          result.innerHTML = 'Too high';
-        }
-      });
-    </script>
   </body>
 </html>
